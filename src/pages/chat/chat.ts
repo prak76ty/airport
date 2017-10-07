@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
 /**
 * Generated class for the ChatPage page.
 *
@@ -30,7 +30,7 @@ export class ChatPage {
       this.flight = this.navParams.get('flight');
       this.myDate = this.navParams.get('myDate');
       this.myTime = this.navParams.get('myTime');
-     
+
       console.log(this.username);
       this.keyChat = this.topping+this.flight+this.myDate+this.myTime;
       this._chatSubscription = this.db.list('/chat').subscribe( data => {

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ChatPage } from '../chat/chat';
 import { PostPage } from '../post/post';
 import { PchatPage } from '../pchat/pchat';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 /**
@@ -40,7 +40,7 @@ keyChat: string= '';
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TagPage');
-    
+
   }
  /*
         if('true') {
@@ -53,7 +53,7 @@ keyChat: string= '';
               myTime: this.myTime
           });
           this.db.object('/info/'+ this.keyChat +'/').set({
-          username: this.username,  
+          username: this.username,
           topping: this.topping,
           flight: this.flight,
           myDate: this.myDate,
@@ -63,6 +63,6 @@ keyChat: string= '';
           console.log('error');
       }
 */
-  
+
 
 }

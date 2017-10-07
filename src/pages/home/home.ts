@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { TagPage } from '../tag/tag';
-import { ChatPage } from '../chat/chat';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -39,7 +38,7 @@ export class HomePage {
                 myDate: this.myDate,
                 myTime: this.myTime
             });
-            
+
         } else {
             this.showAlert('Error', 'Invalid Username');
         }
