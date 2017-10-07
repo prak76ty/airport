@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color = "danger">
+      Airport Luggage System
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>WELCOME</h3>
+	  <ion-item>
+        <ion-label floating>Your name</ion-label>
+       <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+      <ion-item>
+      <ion-label floating>Choose Airways</ion-label>
+      <ion-select [(ngModel)]="topping" multiple="false">
+        <ion-option>Indigo Airways</ion-option>
+        <ion-option>Jet Airways</ion-option>
+        <ion-option>Air India</ion-option>
+        <ion-option>SpiceJet</ion-option>
+        <ion-option>GoAir</ion-option>
+        <ion-option>Vistara</ion-option>
+      </ion-select>
+    </ion-item>
+      <ion-item>
+        <ion-label floating>Flight No</ion-label>
+        <ion-input [(ngModel)]="flight" name='text' type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+    <ion-label floating>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+  <ion-label floating>Time(HH:MM)</ion-label>
+  <ion-datetime displayFormat="HH:mm" [(ngModel)]="myTime"></ion-datetime>
+</ion-item>
+  <button ion-button block outline (click)="loginUser()">Login</button>
+</ion-content>
