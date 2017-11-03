@@ -28,7 +28,9 @@ flight: string = '';
 myDate: string = '';
 myTime:string = '';
 keyChat: string= '';
+work: string='1';
   constructor(public db: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
+  if(this.work === '1'){
   this.username = this.navParams.get('username');
   this.topping = this.navParams.get('topping');
   this.flight = this.navParams.get('flight');
@@ -36,33 +38,27 @@ keyChat: string= '';
   this.myTime = this.navParams.get('myTime');
   this.keyChat = this.topping+this.flight+this.myDate+this.myTime;
   console.log(this.username);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TagPage');
-
-  }
- /*
-        if('true') {
-          // all cool
-          this.navCtrl.push(TagPage, {
-              username: this.username,
-              topping: this.topping,
-              flight: this.flight,
-              myDate: this.myDate,
-              myTime: this.myTime
-          });
-          this.db.object('/info/'+ this.keyChat +'/').set({
-          username: this.username,
-          topping: this.topping,
-          flight: this.flight,
-          myDate: this.myDate,
-          myTime: this.myTime });
-          console.log('success');
-      } else {
-          console.log('error');
-      }
-*/
-
-
+  if('true') {
+    // all cool
+    this.navCtrl.push(ChatPage, {
+        username: this.username,
+        topping: this.topping,
+        flight: this.flight,
+        myDate: this.myDate,
+        myTime: this.myTime
+    });
+   this.db.object('/info/'+ this.keyChat).set({
+    username: this.username,
+    topping: this.topping,
+    flight: this.flight,
+    myDate: this.myDate,
+    myTime: this.myTime
+});
+}
+}
+this.work='2';
+}
+ionViewDidLoad() {
+  console.log('ionViewDidLoad TagPage');
+}
 }
